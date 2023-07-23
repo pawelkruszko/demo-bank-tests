@@ -27,7 +27,7 @@ test.describe('Pulpit tests', () => {
 
     // Assert
     await expect(page.locator('#show_messages')).toHaveText(
-      `Przelew wykonany! ${expectedTransferReceiver} - ${transferAmount},00PLN - ${transferTitle}`
+      `Przelew wykonany! ${expectedTransferReceiver} - ${transferAmount},00PLN - ${transferTitle}`,
     );
   });
 
@@ -44,7 +44,7 @@ test.describe('Pulpit tests', () => {
     await page.getByTestId('close-button').click();
 
     await expect(page.locator('#show_messages')).toHaveText(
-      'Doładowanie wykonane! 50,00PLN na numer 500 xxx xxx'
+      'Doładowanie wykonane! 50,00PLN na numer 500 xxx xxx',
     );
   });
 });
