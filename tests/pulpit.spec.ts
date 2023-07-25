@@ -4,9 +4,8 @@ test.describe('Pulpit tests', () => {
   test.beforeEach(async ({ page }) => {
     const userId = 'testerLO';
     const userPassword = '10987654';
-    const url = 'https://demo-bank.vercel.app/';
     
-    await page.goto(url);
+    await page.goto('/');
     await page.getByTestId('login-input').fill(userId);
     await page.getByTestId('password-input').fill(userPassword);
     await page.getByTestId('login-button').click();
