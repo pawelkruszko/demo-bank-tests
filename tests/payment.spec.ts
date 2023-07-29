@@ -13,7 +13,7 @@ test.describe('Payment tests', () => {
     await loginPage.passwordInput.fill(userPassword);
     await loginPage.loginButton.click();
 
-    await page.getByRole('link', { name: 'płatności' }).click();
+    await page.getByRole('link', { name: 'płatności' }).click(); // pominąć ten krok
   });
 
   test('simple payment', async ({ page }) => {
