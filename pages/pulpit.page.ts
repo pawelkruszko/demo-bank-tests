@@ -3,18 +3,24 @@ import { Page } from '@playwright/test';
 export class PulpitPage {
   constructor(private page: Page) {}
 
-  receiverId = this.page.locator('#widget_1_transfer_receiver');
-  transferAmount = this.page.locator('#widget_1_transfer_amount');
-  transferTitle = this.page.locator('#widget_1_transfer_title');
+  transferReceiverInput = this.page.locator('#widget_1_transfer_receiver');
+  transferAmountInput = this.page.locator('#widget_1_transfer_amount');
+  transferTitleInput = this.page.locator('#widget_1_transfer_title');
 
-  clickButton = this.page.getByRole('button', { name: 'wykonaj' });
-  closeButton = this.page.getByTestId('close-button');
+  transferButton = this.page.getByRole('button', { name: 'wykonaj' });
+  actionCloseButton = this.page.getByTestId('close-button');
 
+  messageText = this.page.locator('#show_messages');
+
+  topUpReceiverInput = this.page.locator('#widget_1_topup_receiver');
+  topUpAmountInput = this.page.locator('#widget_1_topup_amount');
+  topUpAgreementCheckbox = this.page.locator(
+    '#uniform-widget_1_topup_agreement span',
+  );
+  topUpExecuteButton = this.page.getByRole('button', {
+    name: 'doładuj telefon',
+  });
+
+  moneyValueText = this.page.locator('#money_value');
   userNameText = this.page.getByTestId('user-name');
-
-  topUpReceiver = this.page.locator('#widget_1_topup_receiver');
-  topUpAmount = this.page.locator('#widget_1_topup_amount');
-  topUpAgreement = this.page.locator('#uniform-widget_1_topup_agreement span');
-
-  clickNextButton = this.page.getByRole('button', { name: 'doładuj telefon' });
 }
