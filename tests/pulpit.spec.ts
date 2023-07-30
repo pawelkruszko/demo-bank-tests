@@ -25,13 +25,11 @@ test.describe('Pulpit tests', () => {
     const expectedTransferReceiver = 'Chuck Demobankowy';
 
     // Act
-    const pulpitPage = new PulpitPage(page);
-    await pulpitPage.transferReceiverInput.selectOption(receiverId);
-    await pulpitPage.transferAmountInput.fill(transferAmount);
-    await pulpitPage.transferTitleInput.fill(transferTitle);
-
-    await pulpitPage.transferButton.click();
-    await pulpitPage.actionCloseButton.click();
+    await pulpitPage.executeQuickPayment(
+      receiverId,
+      transferAmount,
+      transferTitle,
+    );
 
     // Assert
     await expect(pulpitPage.messageText).toHaveText(
